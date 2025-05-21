@@ -6,6 +6,11 @@ describe('Product browsing and filtering', () => {
 
         cy.url().should('include', '/products');
         cy.contains('All Products').should('be.visible');
+
+        cy.contains('Women').click();
+        cy.get('.panel-body').contains('Dress').click(); 
+
+        cy.contains('Women - Dress Products').should('be.visible');
         
     })
     
